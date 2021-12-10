@@ -1,7 +1,7 @@
 import React from 'react'
 import styled  from 'styled-components';
 import { Flex } from '../../simple_styles';
-import icon from '../../../assets/link.svg'
+import icon from '../../../../assets/link.svg'
 
 const LinkStyle = styled.div`
     

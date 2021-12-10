@@ -1,28 +1,17 @@
 import React, { useEffect } from 'react'
-import styled  from 'styled-components';
+import styled, { css }  from 'styled-components';
 import { Flex } from '../simple_styles';
 import Images from './Images';
 import ItemOptions from './ItemEnd';
 import Percent from './ItemPercent';
 import ItemTitle from './ItemTitle';
-import icon from '../../assets/dropdown_dwn.svg'
+import icon from '../../../assets/dropdown_dwn.svg'
+import { DropDownIcon } from './dropDown/DropDownIcon';
 
 const ItemStartStyle = styled.div`
     cursor: pointer;
     position: relative;
-`
-
-type PrimeyType = {
-    primary: boolean
-}
-
-const DropDownIcon = styled.img`
-    transition: .3s;
-`
-
-const DropDownIcon_a = styled.img`
-    transition: .3s;
-    transform: rotate(180deg);
+    border-bottom: 1px solid #F9F9F9;
 `
 
 
@@ -56,8 +45,7 @@ const ItemTop:React.FC<InfoArrayList> = props => {
                 <ItemTitle titles={props.info.name}/>
                 <Percent text={props.info.percent}/>
                 <ItemOptions earned={props.info.earned} APR={props.info.APR} liqudity={props.info.liqudity} multiplier={props.info.multiplier}/>
-                {/* <DropDownIcon primary src={icon} onClick={clickDD}/> */}
-                {dropDown?<DropDownIcon src={icon}/>:<DropDownIcon_a src={icon}/>}
+                <DropDownIcon src={icon} dropdown={dropDown}/>
             </Flex>
         </ItemStartStyle>
     )

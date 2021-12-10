@@ -3,10 +3,14 @@ import styled  from 'styled-components';
 import ItemDropDown from './item_components/dropDown/ItemDropDown';
 import ItemTop from './item_components/ItemTop';
 
-const ItemStyle = styled.li`
-    padding: 19px 12px;
-    border-bottom: 1px solid #F9F9F9;
+type PropsDD = {
+    dropdown?: boolean
+}
 
+const ItemStyle = styled.li<PropsDD>`
+    padding: 19px 14px 19px 10px;
+    transition: .3s;
+    background: ${props => props.dropdown?'#F9F9F9':'#fff'};
 `
 
 type InfoArrayList = {
@@ -31,7 +35,7 @@ const Item:React.FC<InfoArrayList> = props => {
     }
 
     return (
-        <ItemStyle>
+        <ItemStyle dropdown={dropwDown}>
             <ItemTop info={props.info} clickDropDown={() => dropDownHandler()}/>
             <ItemDropDown earned={props.info.earned} show={dropwDown}/>
         </ItemStyle>

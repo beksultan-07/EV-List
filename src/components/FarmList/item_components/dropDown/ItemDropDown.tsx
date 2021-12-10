@@ -5,9 +5,16 @@ import Earned from './Earned';
 import IButton from './IButton';
 import Links from './Links';
 
+type ShowProps = {
+    show?: boolean
+}
 
-const ItemEndStyle = styled.div`
-    padding: 10px 0;
+const ItemEndStyle = styled.div<ShowProps>`
+    transition: .3s;
+    padding: ${props => props.show?'10px 0':'0px'};
+    visibility: ${props => props.show?'visible':'hidden'};
+    opacity: ${props => props.show?'1':'0'};
+    height: ${props => props.show?'auto':'0px'}; 
 `
 
 type EarnedType = {
@@ -17,13 +24,9 @@ type EarnedType = {
 
 
 const ItemDropDown:React.FC<EarnedType> = props => {
-    if (!props.show) {
-        return<></>
-    }
-    
     return (
-        <ItemEndStyle>
-            <Flex>
+        <ItemEndStyle show={props.show}>
+            <Flex align='center'>
                 <Links/>
                 <Earned earned={props.earned}/>
                 <Flex>

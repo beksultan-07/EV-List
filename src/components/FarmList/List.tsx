@@ -1,19 +1,20 @@
 import React from 'react'
 import styled  from 'styled-components';
 import Item from './Item';
-import icon1 from '../assets/usdc1.svg'
-import icon2 from '../assets/usdc2.svg'
+import icon1 from '../../assets/usdc1.svg'
+import icon2 from '../../assets/usdc2.svg'
 
 const ListStyle = styled.ul`
     padding: 0;
     list-style: none;
+    max-width: ;
 `
 
 const List:React.FC = () => {
     const [infoList, setinfoList] = React.useState([
         {
-            name: ['ETH','USDC', 'USDC'],
-            img: [icon1, icon2, icon2, icon1],
+            name: ['ETH','USDC'],
+            img: [icon1, icon2],
             percent: '0.3%',
             earned: 0,
             APR: '37.2',
@@ -22,7 +23,7 @@ const List:React.FC = () => {
         },
         {
             name: ['ETH','USDC'],
-            img: [icon1, icon2,icon1],
+            img: [icon1, icon2],
             percent: '0.3%',
             earned: 0,
             APR: '37.2',

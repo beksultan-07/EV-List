@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import styled from 'styled-components'
-import { Container } from './components/simple_styles';
-import List from './components/List';
+import { Container } from './components/FarmList/simple_styles';
+import List from './components/FarmList/List';
 
 
 

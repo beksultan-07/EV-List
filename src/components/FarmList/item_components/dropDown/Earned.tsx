@@ -1,5 +1,6 @@
 import React from 'react'
 import styled  from 'styled-components';
+import { Flex } from '../../simple_styles';
 
 
 const EarnedStyle = styled.div`
@@ -7,6 +8,8 @@ const EarnedStyle = styled.div`
 `
 
 const EarnedTextStyle = styled.p`
+    padding: 0;
+    margin: 5px 0;
     font-family: Roboto;
     font-weight: 500;
     font-size: 12px;
@@ -36,8 +39,10 @@ type EarnedType = {
 const Earned:React.FC<EarnedType> = props => {
     return (
         <EarnedStyle>
-            <EarnedTextStyle><Link href="#">ETH</Link> EARNED</EarnedTextStyle>
-            <EarnedTextStyle>{props.earned}</EarnedTextStyle>
+            <Flex align='flex-end' direction='column'>
+                <EarnedTextStyle><Link href="#">ETH</Link> EARNED</EarnedTextStyle>
+                <EarnedTextStyle>{props.earned}</EarnedTextStyle>
+            </Flex>
         </EarnedStyle>
     )
 }

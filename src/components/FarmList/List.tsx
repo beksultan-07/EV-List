@@ -17,7 +17,7 @@ const List:React.FC = () => {
             img: [icon1, icon2],
             percent: '0.3%',
             earned: 0,
-            APR: '37.2',
+            APR: '37.2%',
             liqudity: '$749 614 538',
             multiplier: '40x'
         },
@@ -26,7 +26,7 @@ const List:React.FC = () => {
             img: [icon1, icon2],
             percent: '0.3%',
             earned: 0,
-            APR: '37.2',
+            APR: '37.2%',
             liqudity: '$749 614 538',
             multiplier: '40x'
         },
@@ -35,7 +35,7 @@ const List:React.FC = () => {
             img: [icon1, icon2],
             percent: '0.3%',
             earned: 0,
-            APR: '37.2',
+            APR: '37.2%',
             liqudity: '$749 614 538',
             multiplier: '40x'
         },
@@ -44,7 +44,7 @@ const List:React.FC = () => {
             img: [icon1, icon2],
             percent: '0.3%',
             earned: 0,
-            APR: '37.2',
+            APR: '37.2%',
             liqudity: '$749 614 538',
             multiplier: '40x'
         },
@@ -53,7 +53,7 @@ const List:React.FC = () => {
             img: [icon1, icon2],
             percent: '0.3%',
             earned: 0,
-            APR: '37.2',
+            APR: '37.2%',
             liqudity: '$749 614 538',
             multiplier: '40x'
         },

@@ -5,14 +5,18 @@ import { Flex } from '../simple_styles';
 
 
 const ItemEndStyle = styled.span`
-    margin: 0 20px;
+    margin: 0 65px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 `
 
-const ItemOptionTextStyle = styled.p`
-    margin: 2px 0;
+type PropsTextA = {
+    textA?: boolean
+}
+
+const ItemOptionTextStyle = styled.p<PropsTextA>`
+    margin: ${props => props.textA?'2px 23px 2px 0px':'2px 0'};
     font-family: Roboto;
     font-weight: normal;
     font-size: 12px;
@@ -26,17 +30,10 @@ const ItemOptionTextStyle = styled.p`
     }
 `
 
-const APRStyle = styled.p`
-    margin: 2px 10px -4px 0;
-    font-family: Roboto;
-    font-weight: normal;
-    font-size: 12px;
-    color: #133D65;
-    text-transform: capitalize;
-`
-
-
-const CalcIcon = styled.img``
+const CalcIcon = styled.img`
+    width: 18px;
+    margin: 0 2px;
+    `
 
 
 type ItemOptionType = {
@@ -45,16 +42,23 @@ type ItemOptionType = {
 }
 
 const ItemOption:React.FC<ItemOptionType> = (props) => {
+    const [state, setState] = React.useState<boolean>(false)
+
+    React.useEffect(() => {
+        if (props.name === 'APR') {
+            setState(true)
+        }
+    }, [])
+
     return (
         <ItemEndStyle>
-            {props.name==='APR'?<APRStyle>{props.name}
-            </APRStyle>:<ItemOptionTextStyle>{props.name}</ItemOptionTextStyle>}
-            {/* <ItemOptionTextStyle>
-            </ItemOptionTextStyle> */}
-            <ItemOptionTextStyle>
-                {props.name==='APR'?<>
-                    <Flex align='center'><span>{props.value}</span><CalcIcon src={calc}/></Flex>
-                </>:props.value}</ItemOptionTextStyle>
+            <ItemOptionTextStyle textA={state}>{props.name}</ItemOptionTextStyle>
+            <Flex>
+                <ItemOptionTextStyle>
+                    {props.value}
+                </ItemOptionTextStyle>
+                {props.name==='APR'?<CalcIcon src={calc}/>:<></>}
+            </Flex>
         </ItemEndStyle>
     )
 }

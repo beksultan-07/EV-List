@@ -11,7 +11,7 @@ type ShowProps = {
 
 const ItemEndStyle = styled.div<ShowProps>`
     transition: .3s;
-    padding: ${props => props.show?'10px 0':'0px'};
+    padding: ${props => props.show?'10px 20px':'0px 20px'};
     visibility: ${props => props.show?'visible':'hidden'};
     opacity: ${props => props.show?'1':'0'};
     height: ${props => props.show?'auto':'0px'}; 

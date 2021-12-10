@@ -27,7 +27,7 @@ const ItemOptionTextStyle = styled.p`
 `
 
 const APRStyle = styled.p`
-    margin: 2px 10px 2px 0;
+    margin: 2px 10px -4px 0;
     font-family: Roboto;
     font-weight: normal;
     font-size: 12px;
